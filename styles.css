@@ -1,24 +1,30 @@
 input{
-	display: hidden;
+	visibility:hidden;
 }
 .base{
-	width:120px;
+	display:inline-block;
+	width:110px;
 	height:60px;
 	background-color:#e7e7e7;
 	border-radius:50px
 }
-.toggle-container{
+.g1, .g2, .g3{
 	position: relative;
 }
-.circle{
-	width:60px;
-	height:60px;
-	background-color:red;
-	border-radius:30px;
+.base::before{
+	content:"";
+	width:50px;
+	height:50px;
+	background-color:white;
+	border-radius:25px;
 	position:absolute;
-	top:0;
-	left:0;
+	top:5px;
+	left:30px;
 }
- .circle{
-	left:60px;
+input:checked + .base::before{
+	left:80px;
+	transition: 0.4s linear all;
+}
+input:checked ~ .base{
+	background-color:dodgerblue;
 }
